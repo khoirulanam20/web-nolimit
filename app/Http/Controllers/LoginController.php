@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
+            'username' => 'required|string',
             'password' => 'required|string|min:8',
         ]);
 
@@ -24,7 +24,7 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Invalid credentials');
         }
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $user = Auth::user();

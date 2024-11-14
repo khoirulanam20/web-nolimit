@@ -82,17 +82,15 @@
                 <h4 class="mb-2">Selamat datang di No Limit Gym</h4>
                 <p class="mb-4">Bergabung sekarang untuk mengakses semua layanan No Limit Gym</p>
 
-                <form id="formAuthentication" action="{{ route('login') }}" method="POST">
+                <form id="loginForm" action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" 
-                               placeholder="Enter your email" required autofocus />
+                        <label for="loginUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="loginUsername" name="username" placeholder="Enter your username" required autofocus />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password"
-                               placeholder="Enter your password" required />
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter your password" required />
                     </div>
                     <div class="mb-3 d-flex justify-content-between align-items-center">
                         <div class="form-check">
@@ -126,33 +124,29 @@
                 <h4 class="mb-2">Bergabung dengan No Limit Gym</h4>
                 <p class="mb-4">Daftar sekarang untuk mengakses semua layanan kami</p>
 
-                <form id="formAuthentication" action="{{ route('register.post') }}" method="POST">
+                <form id="registerForm" action="{{ route('register.post') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" name="nama"
-                               placeholder="Enter your name" required />
+                        <label for="registerNama" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="registerNama" name="nama" placeholder="Enter your name" required />
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username"
-                               placeholder="Enter your username" required />
+                        <label for="registerUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="registerUsername" name="username" placeholder="Enter your username" required />
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email"
-                               placeholder="Enter your email" required />
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" name="email" placeholder="Enter your email" required />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password"
-                               placeholder="Enter password" required />
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" name="password" placeholder="Enter password" required />
                     </div>
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
-                        <input type="password" class="form-control" id="password_confirmation" 
-                               name="password_confirmation" placeholder="Confirm password" required />
+                        <label for="registerPasswordConfirmation" class="form-label">Konfirmasi Password</label>
+                        <input type="password" class="form-control" id="registerPasswordConfirmation" name="password_confirmation" placeholder="Confirm password" required />
                     </div>
+                    <div id="passwordError" class="text-danger" style="display: none;">Password dan konfirmasi password tidak sesuai.</div>
                     <div class="mb-3 text-end">
                         <button type="button" class="text-danger border-0 bg-transparent"
                                 data-bs-toggle="modal" data-bs-target="#loginModal" 
@@ -166,3 +160,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    function validatePasswords(event) {
+        var password = document.getElementById('registerPassword').value;
+        var confirmPassword = document.getElementById('registerPasswordConfirmation').value;
+        var errorDiv = document.getElementById('passwordError');
+
+        if (password !== confirmPassword) {
+            event.preventDefault(); // Mencegah form dari pengiriman
+            errorDiv.style.display = 'block'; // Tampilkan pesan kesalahan
+        } else {
+            errorDiv.style.display = 'none'; // Sembunyikan pesan kesalahan jika sesuai
+        }
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', validatePasswords);
+</script>

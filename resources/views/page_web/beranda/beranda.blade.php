@@ -12,7 +12,12 @@
                                 <span>Build Up Your</span>
                                 <h3>Body Shape</h3>
                                 <p>Build Your Body and Fitness with Professional Touch</p>
-                                <a href="#" class="boxed-btn3" data-bs-toggle="modal" data-bs-target="#loginModal">Join Us</a>
+                                @auth
+                                    <a href="/membership" class="boxed-btn3">Membership</a>
+                                @else
+                                    <a href="#" class="boxed-btn3" data-bs-toggle="modal" data-bs-target="#loginModal">Join
+                                        Us</a>
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -26,7 +31,12 @@
                                 <span>Build Up Your</span>
                                 <h3>Strength</h3>
                                 <p>Build Your Body and Fitness with Professional Touch</p>
-                                <a href="#" class="boxed-btn3" data-bs-toggle="modal" data-bs-target="#loginModal">Join Us</a>
+                                @auth
+                                    <a href="/membership" class="boxed-btn3">Membership</a>
+                                @else
+                                    <a href="#" class="boxed-btn3" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">Join Us</a>
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -40,7 +50,12 @@
                                 <span>Build Up Your</span>
                                 <h3>Body Shape</h3>
                                 <p>Build Your Body and Fitness with Professional Touch</p>
-                                <a href="#" class="boxed-btn3" data-bs-toggle="modal" data-bs-target="#loginModal">Join Us</a>
+                                @auth
+                                    <a href="/membership" class="boxed-btn3">Membership</a>
+                                @else
+                                    <a href="#" class="boxed-btn3" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">Join Us</a>
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -54,7 +69,12 @@
                                 <span>Build Up Your</span>
                                 <h3>Strength</h3>
                                 <p>Build Your Body and Fitness with Professional Touch</p>
-                                <a href="#" class="boxed-btn3">Join Us</a>
+                                @auth
+                                    <a href="/membership" class="boxed-btn3">Membership</a>
+                                @else
+                                    <a href="#" class="boxed-btn3" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">Join Us</a>
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -64,7 +84,7 @@
     </div>
     <!-- slider_area_end -->
 
-    <!-- catagory_area  -->
+    {{-- <!-- catagory_area  -->
     <div class="catagory_area">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -87,7 +107,7 @@
             </div>
         </div>
     </div>
-    <!--/ catagory_area  -->
+    <!--/ catagory_area  --> --}}
 
     <!-- features_area_start  -->
     <div class="features_area">
@@ -143,7 +163,7 @@
     </div>
     <!-- features_area_end  -->
 
-    <div class="offer_area offer_bg">
+    {{-- <div class="offer_area offer_bg">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-lg-6">
@@ -158,10 +178,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
-
+    {{-- 
     <div class="priscing_area">
         <div class="container">
             <div class="row">
@@ -236,6 +256,7 @@
     </div>
 
 
+    {{-- ==}} --}}
 
     <!-- gallery_start -->
     <div class="gallery_area">
@@ -290,7 +311,8 @@
 
     </div>
     <!-- gallery_area_end  -->
-    <a href="#" class="view_pore boxed-btn3">View More</a>
+
+    {{-- <a href="#" class="view_pore boxed-btn3">View More</a>
     <!-- team_area_start  -->
     <div class="team_area team_bg_1 overlay2">
         <div class="container">
@@ -367,7 +389,7 @@
             </div>
         </div>
     </div>
-    <!-- team_area_end  -->
+    <!-- team_area_end  --> --}}
 
     <!-- big_offer_area start  -->
     <div class="big_offer_area">
@@ -377,7 +399,12 @@
                     <div class="offter_text text-center">
                         <h3>A Big Offer for <br>
                             This Summer</h3>
-                        <a href="#" class="boxed-btn3">Join Now</a>
+                        @auth
+                            <a href="/membership" class="boxed-btn3">Membership</a>
+                        @else
+                            <a href="#" class="boxed-btn3" data-bs-toggle="modal" data-bs-target="#loginModal">Join
+                                Us</a>
+                        @endauth
                     </div>
                 </div>
             </div>

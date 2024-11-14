@@ -6,7 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AboutController;
-
+use App\Http\Controllers\MembershipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,7 @@ use App\Http\Controllers\AboutController;
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/membership', [MembershipController::class, 'index'])->name('membership');
 
 //auth
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

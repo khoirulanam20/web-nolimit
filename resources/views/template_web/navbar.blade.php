@@ -18,7 +18,7 @@
                                     <ul id="navigation">
                                         <li><a href="/">home</a></li>
                                         <li><a href="/about">about</a></li>
-                                        <li><a href="pricing.html">pricing</a></li>
+                                        <li><a href="/membership">membership</a></li>
                                         <li><a href="gallery.html">gallery</a></li>
                                         <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
